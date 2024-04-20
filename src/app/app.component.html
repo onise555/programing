@@ -1,0 +1,27 @@
+
+
+
+
+
+
+
+
+<input (keyup.enter)="show()" [(ngModel)]="user.ImgUrl" type="text" placeholder="image">
+<input (keyup.enter)="show()" [(ngModel)]="user.UserName" type="text" placeholder="Name">
+<input (keyup.enter)="show()" [(ngModel)]="user.LastName" type="text" placeholder="LastName">
+<input (keyup.enter)="show()" [(ngModel)]="user.UserAge" type="text" placeholder="Age">
+<input (keyup.enter)="show()" [(ngModel)]="user.Email" type="text" placeholder="Email">
+<button (click)="show()">save</button>
+
+
+<div *ngFor="let item of userList let i =index" class="card" style="width: 18rem;">
+  <img [src]="item.ImgUrl" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Name: {{item.UserName}} </h5>
+    <h5 class="card-title">LastName: {{item.LastName}} </h5>
+    <h5 class="card-title">Age: {{item.UserAge}} </h5>
+    <h5 class="card-title">Email: {{item.Email}} </h5>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <button (click)="edit(i)">Edit</button>
+  </div>
+</div>
